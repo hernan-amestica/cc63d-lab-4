@@ -6,8 +6,8 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@4
-      - uses: action/setup-python@v5
+      - uses: actions/checkout@4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Instalar dependencias
