@@ -289,8 +289,8 @@ def create_incident():
     data = request.json
     if not data or not data.get("title") or not data.get("service_id") or not data.get("severity"):
         return jsonify({"error": "title, service_id and severity are required"}), 400
-    if data["severity"] not in (1, 2, 3, 4):
-        return jsonify({"error": "severity must be between 1 and 4"}), 400
+    # if data["severity"] not in (1, 2, 3, 4):
+    #     return jsonify({"error": "severity must be between 1 and 4"}), 400
 
     db = get_db()
     service = db.execute("SELECT * FROM services WHERE id = ?", (data["service_id"],)).fetchone()
